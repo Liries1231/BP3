@@ -22,7 +22,6 @@ public class BookService {
     private BookRepos bookRepos;
 
 
-
     public BookRepos getBookRepos() {
         return bookRepos;
     }
@@ -41,11 +40,7 @@ public class BookService {
     }
 
     public Book createBook(Book book) {
-        // Дополнительная бизнес-логика перед созданием книги
-        // ...
-
         return bookRepos.save(book);
-
 
     }
 

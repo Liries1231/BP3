@@ -14,17 +14,13 @@ import java.util.Objects;
 @RequiredArgsConstructor
 public class Author {
     @Id
-    @GeneratedValue (strategy = GenerationType.AUTO)
-    Integer authorId;
-    int age;
-
-    String country;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer authorId;
+    private int age;
+    private String country;
     @OneToMany(mappedBy = "author")
     @ToString.Exclude
     List<Book> bookAuthor;
-
-
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

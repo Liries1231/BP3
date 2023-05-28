@@ -44,6 +44,7 @@ public class BookController {
 
         return "books";
     }
+
     @PostMapping()
     public String add(@RequestParam String name, @RequestParam String author,
                       @RequestParam Author authorId, Map<String, Object> model) {
@@ -56,19 +57,21 @@ public class BookController {
         return "main";
 
     }
+
     @GetMapping("{id}")
-    public String delete(@PathVariable ("id") int id){
+    public String delete(@PathVariable("id") int id) {
         bookRepos.deleteById(id);
         return "redirect:/";
 
     }
+
     @PutMapping("{id}")
     public ResponseEntity<Book> updateBook(@PathVariable int id, @RequestBody Book updatedBook) {
         Book book = bookRepos.updateBook(id, updatedBook);
         return ResponseEntity.ok(book);
     }
 
-    }
+}
 
 
 
